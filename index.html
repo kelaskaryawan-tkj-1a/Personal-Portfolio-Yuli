@@ -1,0 +1,1050 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YULY | Personal Portfolio</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #8b75ca;
+            --primary-dark: #7058b0;
+            --lavender: #f0ebfa;
+            --light: #f9f8fc;
+            --dark: #29263a;
+            --text: #777487;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--dark);
+            background: white;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background: rgba(255,255,255,.94);
+            backdrop-filter: blur(15px);
+            padding: 17px 0;
+            border-bottom: 1px solid #eeeaf5;
+        }
+
+        .navbar-brand {
+            font-size: 27px;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -1px;
+        }
+
+        .navbar-brand span {
+            color: var(--primary);
+        }
+
+        .nav-link {
+            color: #666276;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 9px;
+            transition: .3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .contact-nav {
+            background: var(--primary);
+            color: white;
+            padding: 11px 19px;
+            border-radius: 9px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .contact-nav:hover {
+            background: var(--primary-dark);
+            color: white;
+        }
+
+        .navbar-toggler {
+            border: none;
+            font-size: 25px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 750px;
+            padding: 145px 0 90px;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 85% 20%, #eee8fc, transparent 30%),
+                linear-gradient(120deg, #fff 45%, #f8f6fd 100%);
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: white;
+            border: 1px solid #eeeaf5;
+            border-radius: 30px;
+            padding: 9px 16px;
+            color: var(--text);
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 28px;
+        }
+
+        .hero-tag span {
+            width: 8px;
+            height: 8px;
+            background: #7bc99c;
+            border-radius: 50%;
+        }
+
+        .hero h5 {
+            color: var(--primary);
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .hero h1 {
+            font-size: clamp(65px, 9vw, 100px);
+            font-weight: 800;
+            letter-spacing: -6px;
+            line-height: 1.1;
+            margin: 5px 0 15px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 3vw, 27px);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 540px;
+            color: var(--text);
+            line-height: 1.9;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 23px;
+            border-radius: 9px;
+            background: var(--primary);
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .btn-main:hover {
+            background: var(--primary-dark);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-second {
+            display: inline-block;
+            padding: 13px 22px;
+            border: 1px solid #ddd6ed;
+            border-radius: 9px;
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 14px;
+            background: white;
+        }
+
+        .btn-second:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 19px;
+            margin-top: 38px;
+        }
+
+        .social-links span {
+            color: var(--text);
+            font-size: 13px;
+        }
+
+        .social-links a {
+            color: #777487;
+            font-size: 19px;
+            transition: .3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        /* HERO PHOTO */
+
+        .photo-area {
+            position: relative;
+            max-width: 390px;
+            margin: auto;
+            padding: 15px;
+        }
+
+        .photo-bg {
+            position: absolute;
+            inset: 0;
+            background: #e9e2f8;
+            border-radius: 180px 180px 35px 35px;
+            transform: rotate(5deg);
+        }
+
+        .photo-area img {
+            position: relative;
+            width: 100%;
+            height: 465px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 180px 180px 25px 25px;
+            border: 7px solid white;
+            box-shadow: 0 20px 50px rgba(70,50,120,.12);
+        }
+
+        .photo-info {
+            position: absolute;
+            bottom: 42px;
+            left: -35px;
+            background: white;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-radius: 13px;
+            box-shadow: 0 10px 30px rgba(50,40,80,.12);
+        }
+
+        .photo-info i {
+            background: var(--lavender);
+            color: var(--primary);
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        .photo-info strong,
+        .photo-info small {
+            display: block;
+        }
+
+        .photo-info strong {
+            font-size: 12px;
+        }
+
+        .photo-info small {
+            font-size: 11px;
+            color: var(--text);
+        }
+
+        /* SECTION GENERAL */
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+            font-size: 11px;
+            letter-spacing: 2px;
+            font-weight: 800;
+        }
+
+        .section-title h2 {
+            font-size: clamp(30px, 4vw, 40px);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin: 12px 0;
+        }
+
+        .section-title h2 em {
+            color: var(--primary);
+            font-style: normal;
+        }
+
+        .section-title p {
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        /* ABOUT */
+
+        .about-box {
+            padding: 40px;
+            border: 1px solid #eeeaf5;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(55,40,90,.04);
+        }
+
+        .about-highlight {
+            padding: 28px;
+            background: var(--light);
+            border-radius: 15px;
+        }
+
+        .about-highlight h3 {
+            font-size: 23px;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        .about-highlight .number {
+            font-size: 50px;
+            font-weight: 800;
+            color: #d5c9f1;
+        }
+
+        .about-highlight p,
+        .about-description {
+            color: var(--text);
+            line-height: 1.9;
+            font-size: 14px;
+        }
+
+        .about-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            border-top: 1px solid #eeeaf5;
+            margin-top: 25px;
+            padding-top: 20px;
+        }
+
+        .about-details small,
+        .about-details strong {
+            display: block;
+        }
+
+        .about-details small {
+            color: var(--text);
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .about-details strong {
+            font-size: 13px;
+        }
+
+        /* SKILLS */
+
+        .skill-card {
+            height: 100%;
+            padding: 30px;
+            border: 1px solid #eeeaf5;
+            background: white;
+            border-radius: 16px;
+            transition: .3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(70,50,120,.08);
+            border-color: #d5c9f1;
+        }
+
+        .skill-icon {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            border-radius: 13px;
+            background: var(--lavender);
+            color: var(--primary);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .skill-card h4 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            color: var(--text);
+            font-size: 13px;
+            line-height: 1.8;
+            min-height: 70px;
+        }
+
+        .skill-card small {
+            color: var(--primary-dark);
+            background: var(--lavender);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* EDUCATION */
+
+        .education-list {
+            max-width: 740px;
+            margin: auto;
+            border-left: 2px solid #e4dcf5;
+            padding-left: 30px;
+        }
+
+        .education-card {
+            position: relative;
+            padding: 27px;
+            margin-bottom: 25px;
+            border: 1px solid #eeeaf5;
+            border-radius: 15px;
+            background: white;
+        }
+
+        .education-card::before {
+            content: "";
+            position: absolute;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            outline: 2px solid #d9cef0;
+            left: -38px;
+            top: 30px;
+        }
+
+        .education-card span {
+            display: inline-block;
+            background: var(--lavender);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 13px;
+        }
+
+        .education-card h4 {
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .education-card .major {
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .education-card p:last-child {
+            color: var(--text);
+            font-size: 13px;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+
+        /* PROJECTS */
+
+        .project-card {
+            height: 100%;
+            overflow: hidden;
+            background: white;
+            border: 1px solid #eeeaf5;
+            border-radius: 16px;
+            transition: .3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(70,50,120,.09);
+        }
+
+        .project-image {
+            height: 190px;
+            display: grid;
+            place-items: center;
+            font-size: 65px;
+            color: var(--primary);
+            background: var(--lavender);
+        }
+
+        .project-card:nth-child(2) .project-image {
+            background: #e9edf9;
+        }
+
+        .project-card:nth-child(3) .project-image {
+            background: #f2eafa;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content span {
+            color: var(--primary);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .project-content h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .project-content p {
+            color: var(--text);
+            font-size: 13px;
+            line-height: 1.8;
+            min-height: 70px;
+        }
+
+        .project-content a {
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            padding: 65px 25px;
+            background: var(--light);
+            border: 1px solid #eeeaf5;
+            border-radius: 22px;
+            text-align: center;
+        }
+
+        .contact-social {
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            margin-top: 28px;
+        }
+
+        .contact-social a {
+            color: var(--text);
+            font-size: 21px;
+        }
+
+        .contact-social a:hover {
+            color: var(--primary);
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 25px 0;
+            border-top: 1px solid #eeeaf5;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 12px;
+            color: var(--text);
+        }
+
+        footer strong,
+        footer a {
+            color: var(--primary);
+        }
+
+        footer a {
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 991px) {
+            .navbar-nav {
+                padding-top: 15px;
+                align-items: flex-start !important;
+            }
+
+            .nav-link {
+                margin: 7px 0;
+            }
+
+            .contact-nav {
+                display: inline-block;
+                margin-top: 10px;
+            }
+
+            .hero {
+                padding-top: 130px;
+            }
+
+            .photo-area {
+                max-width: 340px;
+            }
+
+            .photo-area img {
+                height: 410px;
+            }
+
+            .photo-info {
+                left: -10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 75px 0;
+            }
+
+            .hero {
+                text-align: center;
+                padding: 120px 0 70px;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons,
+            .social-links {
+                justify-content: center;
+            }
+
+            .photo-area {
+                max-width: 280px;
+            }
+
+            .photo-area img {
+                height: 350px;
+            }
+
+            .photo-info {
+                left: -10px;
+                bottom: 25px;
+                padding: 10px;
+            }
+
+            .about-box {
+                padding: 20px;
+            }
+
+            .about-details {
+                gap: 20px;
+            }
+
+            .education-list {
+                padding-left: 25px;
+            }
+
+            .education-card::before {
+                left: -33px;
+            }
+
+            footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#home">yuly<span>.</span></a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#menu">
+            <i class="bi bi-list"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item ms-lg-3">
+                    <a class="contact-nav" href="#contact">Contact Me <i class="bi bi-arrow-up-right"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="row align-items-center gy-5">
+
+            <div class="col-lg-7">
+                <div class="hero-tag">
+                    <span></span> Welcome to my portfolio
+                </div>
+
+                <h5>Hello, I'm</h5>
+                <h1>YULY<span>.</span></h1>
+                <h2>Mahasiswa Teknik Jaringan & Komputer</h2>
+
+                <p class="hero-description">
+                    Saya adalah mahasiswa Universitas Mandiri yang memiliki
+                    ketertarikan pada dunia teknologi, khususnya jaringan
+                    komputer, teknologi informasi, dan pengembangan digital.
+                    Saya senang mempelajari hal baru dan mengembangkan
+                    kemampuan di bidang teknologi.
+                </p>
+
+                <div class="hero-buttons d-flex flex-wrap gap-3">
+                    <a href="#projects" class="btn-main">
+                        Explore My Work <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn-second">Contact Me</a>
+                </div>
+
+                <div class="social-links">
+                    <span>Find me on</span>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="Github"><i class="bi bi-github"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="photo-area">
+                    <div class="photo-bg"></div>
+
+                    <img src="images/profile.jpeg"
+                         alt="Foto profil Yuly"
+                         onerror="this.src='https://placehold.co/500x600/e9e3fa/7661b5?text=Your+Photo'">
+
+                    <div class="photo-info">
+                        <i class="bi bi-mortarboard"></i>
+                        <div>
+                            <strong>Informatics Student</strong>
+                            <small>Universitas Mandiri</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="section-title">
+            <span>GET TO KNOW ME</span>
+            <h2>About <em>Me</em></h2>
+            <p>Kenali lebih dekat tentang diri dan perjalanan saya.</p>
+        </div>
+
+        <div class="about-box">
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-4">
+                    <div class="about-highlight">
+                        <div class="number">01</div>
+                        <h3>Who Am I?</h3>
+                        <p>Learning, Growing, and Creating.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <p class="about-description">
+                        Halo! Saya Yuly, mahasiswa Universitas Mandiri yang
+                        memiliki minat dalam bidang teknologi informasi.
+                        Saya tertarik mempelajari jaringan komputer, perangkat
+                        keras, sistem komputer, serta perkembangan teknologi
+                        digital.
+                    </p>
+
+                    <p class="about-description">
+                        Bagi saya, setiap proses belajar merupakan kesempatan
+                        untuk mengembangkan kemampuan, menambah pengalaman,
+                        dan menciptakan sesuatu yang bermanfaat.
+                    </p>
+
+                    <div class="about-details">
+                        <div>
+                            <small>Nama</small>
+                            <strong>Yuly</strong>
+                        </div>
+                        <div>
+                            <small>Pendidikan</small>
+                            <strong>Universitas Mandiri</strong>
+                        </div>
+                        <div>
+                            <small>Bidang</small>
+                            <strong>Teknologi Informasi</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section section-light" id="skills">
+    <div class="container">
+        <div class="section-title">
+            <span>MY ABILITIES</span>
+            <h2>My <em>Skills</em></h2>
+            <p>Beberapa bidang yang sedang saya pelajari dan kembangkan.</p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="bi bi-router"></i></div>
+                    <h4>Computer Networking</h4>
+                    <p>Memahami dasar jaringan komputer, konfigurasi perangkat, dan konektivitas jaringan.</p>
+                    <small>Networking</small>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="bi bi-pc-display"></i></div>
+                    <h4>Computer Hardware</h4>
+                    <p>Mengenal komponen komputer, perakitan, instalasi, dan troubleshooting.</p>
+                    <small>Hardware</small>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="bi bi-code-slash"></i></div>
+                    <h4>Web Development</h4>
+                    <p>Mempelajari HTML, CSS, Bootstrap, serta dasar pengembangan website.</p>
+                    <small>Development</small>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="bi bi-database"></i></div>
+                    <h4>Database</h4>
+                    <p>Mempelajari konsep basis data dan pengelolaan informasi.</p>
+                    <small>Database</small>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="bi bi-terminal"></i></div>
+                    <h4>Operating System</h4>
+                    <p>Mengenal sistem operasi, instalasi perangkat lunak, dan administrasi dasar.</p>
+                    <small>System</small>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="bi bi-lightbulb"></i></div>
+                    <h4>Problem Solving</h4>
+                    <p>Mengembangkan kemampuan analisis dan pemecahan masalah teknologi.</p>
+                    <small>Personal Skill</small>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section" id="education">
+    <div class="container">
+        <div class="section-title">
+            <span>MY JOURNEY</span>
+            <h2>Education <em>Background</em></h2>
+            <p>Perjalanan pendidikan dan proses pengembangan diri.</p>
+        </div>
+
+        <div class="education-list">
+            <div class="education-card">
+                <span>Current</span>
+                <h4>Universitas Mandiri</h4>
+                <p class="major">Teknik Jaringan & Komputer</p>
+                <p>Sedang menempuh pendidikan tinggi dengan fokus pada pengembangan ilmu teknologi informasi dan komputer.</p>
+            </div>
+
+            <div class="education-card">
+                <span>Previous Education</span>
+                <h4>Pendidikan Madrasah Aliyah</h4>
+                <p class="major">MA AT Tawazun</p>
+                <p>Mempependidikan menengah formal di Indonesia yang setara dengan Sekolah Menengah Atas (SMA), dengan kekhasan pendidikan agama Islam di bawah pembinaan Kementerian Agama.roleh dasar pengetahuan mengenai komputer, perangkat jaringan, dan teknologi informasi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section section-light" id="projects">
+    <div class="container">
+        <div class="section-title">
+            <span>MY WORK</span>
+            <h2>Selected <em>Projects</em></h2>
+            <p>Beberapa contoh proyek dan hasil pembelajaran saya.</p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="project-image"><i class="bi bi-diagram-3"></i></div>
+                    <div class="project-content">
+                        <span>NETWORKING</span>
+                        <h4>Network Simulation</h4>
+                        <p>Simulasi perancangan jaringan komputer menggunakan Cisco Packet Tracer.</p>
+                        <a href="#contact">View Project <i class="bi bi-arrow-up-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="project-image"><i class="bi bi-window"></i></div>
+                    <div class="project-content">
+                        <span>WEB DESIGN</span>
+                        <h4>Personal Website</h4>
+                        <p>Pembuatan website personal menggunakan HTML, CSS, dan Bootstrap.</p>
+                        <a href="#contact">View Project <i class="bi bi-arrow-up-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="project-image"><i class="bi bi-hdd-stack"></i></div>
+                    <div class="project-content">
+                        <span>DATABASE</span>
+                        <h4>Database Project</h4>
+                        <p>Latihan pengelolaan basis data untuk mendukung aplikasi informasi.</p>
+                        <a href="#contact">View Project <i class="bi bi-arrow-up-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+    <div class="container">
+        <div class="contact-box">
+            <div class="section-title">
+                <span>LET'S CONNECT</span>
+                <h2>Let's Work <em>Together</em></h2>
+                <p>Punya pertanyaan atau ingin berdiskusi? Silakan hubungi saya.</p>
+            </div>
+
+            <a href="mailto:emailkamu@example.com" class="btn-main">
+                <i class="bi bi-envelope"></i> Send Me an Email
+            </a>
+
+            <div class="contact-social">
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Github"><i class="bi bi-github"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <p>© 2026 <strong>YULY.</strong> Designed with care.</p>
+        <a href="#home">Back to top <i class="bi bi-arrow-up"></i></a>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Tutup menu mobile setelah link diklik
+    document.querySelectorAll('.navbar-nav .nav-link, .contact-nav').forEach(link => {
+        link.addEventListener('click', () => {
+            const menu = document.getElementById('menu');
+
+            if (menu.classList.contains('show')) {
+                bootstrap.Collapse.getOrCreateInstance(menu).hide();
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
